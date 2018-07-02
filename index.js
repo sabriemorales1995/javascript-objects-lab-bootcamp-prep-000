@@ -11,7 +11,8 @@ function destructivelyUpdateObjectWithKeyAndValue(object, key, value){
 }
 
 function deleteFromObjectByKey(object, key){
-  delete object[key];
+  if(delete object[key])
+    console.log("true");
   return object;
 }
 
@@ -19,7 +20,7 @@ function deleteFromObjectByKey(object, key){
 /*
 
 
-  6) Objects deleteFromObjectByKey(object, key) does not modify the original object (it is non-destructive):
+  6) Objects  does not modify the original object (it is non-destructive):
      ReferenceError: deleteFromObjectByKey is not defined
       at Context.<anonymous> (test/index-test.js:54:7)
 
