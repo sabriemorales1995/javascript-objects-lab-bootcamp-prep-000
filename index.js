@@ -5,14 +5,15 @@ function updateObjectWithKeyAndValue(object, key, value){
   //return an object with the original key value pairs and the new key value pair
 }
 
+function destructivelyUpdateObjectWithKeyAndValue(object, key, value){
+  object[key]= value;
+  return object;
+}
+
 
 
 /*
-  3) Objects updateObjectWithKeyAndValue(object, key, value) it does not modifythe original object, but rather returns a clone with the new data:
-     ReferenceError: updateObjectWithKeyAndValue is not defined
-      at Context.<anonymous> (test/index-test.js:21:7)
-
-  4) Objects destructivelyUpdateObjectWithKeyAndValue(object, key, value) updates `object` with the given `key` and `value` (it is destructive) and returns theentire updated object:
+Objects -- updates `object` with the given `key` and `value` (it is destructive) and returns theentire updated object:
      ReferenceError: destructivelyUpdateObjectWithKeyAndValue is not defined
       at Context.<anonymous> (test/index-test.js:31:7)
 
